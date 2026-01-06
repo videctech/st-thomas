@@ -7,11 +7,16 @@ import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Academics from "./pages/Academics";
+import PrePrimary from "./pages/academics/PrePrimary";
+import PrimarySchool from "./pages/academics/PrimarySchool";
+import HighSchool from "./pages/academics/HighSchool";
 import Admissions from "./pages/Admissions";
 import Gallery from "./pages/Gallery";
 import Achievements from "./pages/Achievements";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -21,11 +26,15 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/academics" element={<Academics />} />
+            <Route path="/academics/pre-primary" element={<PrePrimary />} />
+            <Route path="/academics/primary" element={<PrimarySchool />} />
+            <Route path="/academics/high-school" element={<HighSchool />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/achievements" element={<Achievements />} />

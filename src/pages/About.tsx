@@ -54,7 +54,7 @@ const About = () => {
               About Us
             </span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Shaping Lives Since 1965
+              Shaping Lives Since 2003
             </h1>
             <p className="text-xl text-primary-foreground/80 leading-relaxed">
               Saint Thomas English Convent School has been a cornerstone of quality education, nurturing generations of students to become responsible citizens and future leaders.

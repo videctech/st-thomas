@@ -1,12 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/academics", label: "Academics" },
+  {
+    href: "/academics",
+    label: "Academics",
+    subLinks: [
+      { href: "/academics/pre-primary", label: "Pre-Primary" },
+      { href: "/academics/primary", label: "Primary School" },
+      { href: "/academics/high-school", label: "High School" },
+    ]
+  },
   { href: "/admissions", label: "Admissions" },
   { href: "/gallery", label: "Gallery" },
   { href: "/achievements", label: "Achievements" },
@@ -54,16 +62,34 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${location.pathname === link.href
-                  ? "bg-secondary text-secondary-foreground"
-                  : "text-foreground hover:bg-muted"
-                  }`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href} className="relative group">
+                <Link
+                  to={link.href}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 flex items-center gap-1 ${location.pathname === link.href || location.pathname.startsWith(link.href + "/")
+                    ? "bg-secondary text-secondary-foreground"
+                    : "text-foreground hover:bg-muted"
+                    }`}
+                >
+                  {link.label}
+                  {link.subLinks && <ChevronDown className="w-4 h-4" />}
+                </Link>
+
+                {link.subLinks && (
+                  <div className="absolute top-full left-0 w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                    <div className="bg-card shadow-lg rounded-lg border border-border overflow-hidden">
+                      {link.subLinks.map((subLink) => (
+                        <Link
+                          key={subLink.href}
+                          to={subLink.href}
+                          className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-secondary transition-colors"
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -89,17 +115,32 @@ const Header = () => {
           <div className="lg:hidden absolute top-full left-0 right-0 bg-card shadow-medium border-t border-border animate-fade-up">
             <div className="container mx-auto py-4 px-4 flex flex-col gap-2">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`px-4 py-3 rounded-lg font-medium transition-all ${location.pathname === link.href
-                    ? "bg-secondary text-secondary-foreground"
-                    : "text-foreground hover:bg-muted"
-                    }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
+                <div key={link.href}>
+                  <Link
+                    to={link.href}
+                    className={`block px-4 py-3 rounded-lg font-medium transition-all ${location.pathname === link.href
+                      ? "bg-secondary text-secondary-foreground"
+                      : "text-foreground hover:bg-muted"
+                      }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                  {link.subLinks && (
+                    <div className="ml-4 flex flex-col gap-1 border-l-2 border-border pl-2 mt-1">
+                      {link.subLinks.map((subLink) => (
+                        <Link
+                          key={subLink.href}
+                          to={subLink.href}
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <Button variant="hero" className="mt-2" asChild>
                 <Link to="/admissions" onClick={() => setIsMobileMenuOpen(false)}>

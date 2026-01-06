@@ -70,14 +70,18 @@ const Footer = () => {
             <h4 className="font-display text-lg font-semibold mb-6 text-secondary">Our Programs</h4>
             <ul className="space-y-3">
               {[
-                "Pre-Primary",
-                "Primary School",
-                "Middle School",
-                "High School",
-                "Extra Curricular",
+                { label: "Pre-Primary", href: "/academics/pre-primary" },
+                { label: "Primary School", href: "/academics/primary" },
+                { label: "High School", href: "/academics/high-school" },
+                { label: "Extra Curricular", href: "/academics" },
               ].map((program) => (
-                <li key={program}>
-                  <span className="text-primary-foreground/80">{program}</span>
+                <li key={program.label}>
+                  <Link
+                    to={program.href}
+                    className="text-primary-foreground/80 hover:text-secondary transition-colors"
+                  >
+                    {program.label}
+                  </Link>
                 </li>
               ))}
             </ul>

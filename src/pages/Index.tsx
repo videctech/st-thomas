@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Users, Award, BookOpen, Beaker, Trophy, ChevronRight, Star, Quote } from "lucide-react";
-import heroImage from "@/assets/hero-school.jpg";
+import heroImage from "@/assets/school-campus-hero.jpg";
 import classroomImage from "@/assets/classroom.jpg";
 import laboratoryImage from "@/assets/laboratory.jpg";
 import sportsImage from "@/assets/sports.jpg";

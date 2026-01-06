@@ -11,20 +11,15 @@ const programs = [
     description: "Foundational learning utilizing the Montessori method to foster curiosity and social skills.",
     subjects: ["English", "Rhymes", "Story Telling", "Art & Craft", "General Knowledge"],
     color: "from-emerald-500 to-teal-500",
+    path: "/academics/pre-primary"
   },
   {
-    level: "Lower Primary",
-    grades: "Class 1 - 5",
+    level: "Primary School",
+    grades: "Class 1 - 7",
     description: "Building strong fundamentals in core subjects with emphasis on conceptual understanding and language development.",
-    subjects: ["Kannada", "English", "Hindi", "Mathematics", "EVS (Environmental Studies)", "Computer Science"],
+    subjects: ["Kannada", "English", "Hindi", "Mathematics", "Science", "Social Science", "EVS", "Computer Science", "Physical Education"],
     color: "from-blue-500 to-indigo-500",
-  },
-  {
-    level: "Higher Primary",
-    grades: "Class 6 - 7",
-    description: "Advanced curriculum creating a bridge to high school with deeper subject exploration.",
-    subjects: ["Kannada", "English", "Hindi", "Mathematics", "Science", "Social Science", "Physical Education"],
-    color: "from-violet-500 to-purple-500",
+    path: "/academics/primary"
   },
   {
     level: "High School",
@@ -32,6 +27,7 @@ const programs = [
     description: "Rigorous preparation for SSLC board examinations with focused academic support.",
     subjects: ["Kannada", "English", "Hindi", "Mathematics", "Science", "Social Science", "Information Technology"],
     color: "from-amber-500 to-orange-500",
+    path: "/academics/high-school"
   },
 ];
 
@@ -125,28 +121,38 @@ const Academics = () => {
             {programs.map((program, index) => (
               <div
                 key={index}
-                className="bg-card rounded-2xl shadow-soft overflow-hidden hover:shadow-medium transition-all duration-300"
+                className="block bg-card rounded-2xl shadow-soft overflow-hidden hover:shadow-medium transition-all duration-300 hover:scale-[1.01]"
               >
                 <div className="grid md:grid-cols-3 gap-6 p-8">
                   <div>
                     <div className={`inline-block px-4 py-1 rounded-full text-xs font-semibold mb-3 bg-gradient-to-r ${program.color} text-primary-foreground`}>
                       {program.grades}
                     </div>
-                    <h3 className="font-display text-2xl font-bold text-foreground mb-2">{program.level}</h3>
+                    <h3 className="font-display text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
+                      {program.level}
+                    </h3>
                     <p className="text-muted-foreground">{program.description}</p>
                   </div>
-                  <div className="md:col-span-2">
-                    <h4 className="font-semibold text-foreground mb-3">Subjects Offered:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {program.subjects.map((subject, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1 bg-muted rounded-full text-sm text-muted-foreground"
-                        >
-                          {subject}
-                        </span>
-                      ))}
+                  <div className="md:col-span-2 flex flex-col justify-between items-end">
+                    <div className="w-full">
+                      <h4 className="font-semibold text-foreground mb-3">Subjects Offered:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {program.subjects.map((subject, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 bg-muted rounded-full text-sm text-muted-foreground"
+                          >
+                            {subject}
+                          </span>
+                        ))}
+                      </div>
                     </div>
+                    <Button variant="outline" className="group shrink-0 mt-6 md:mt-0" asChild>
+                      <Link to={program.path}>
+                        More Info
+                        <ChevronRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>

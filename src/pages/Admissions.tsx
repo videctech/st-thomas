@@ -74,7 +74,7 @@ const Admissions = () => {
               Begin Your Journey With Us
             </h1>
             <p className="text-xl text-primary-foreground/80 leading-relaxed mb-8">
-              Applications are now open for the academic year 2025-26. Join our community of learners and experience the St. Thomas difference.
+              Applications are now open for the academic year 2025-26. Join our community of learners and experience the Saint Thomas difference.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="xl">
@@ -225,9 +225,8 @@ const Admissions = () => {
               {feeStructure.map((item, index) => (
                 <div
                   key={index}
-                  className={`grid grid-cols-3 p-4 ${
-                    index % 2 === 0 ? "bg-card" : "bg-muted"
-                  }`}
+                  className={`grid grid-cols-3 p-4 ${index % 2 === 0 ? "bg-card" : "bg-muted"
+                    }`}
                 >
                   <span className="text-foreground font-medium">{item.category}</span>
                   <span className="text-center text-secondary font-semibold">{item.admission}</span>
@@ -254,7 +253,7 @@ const Admissions = () => {
               Ready to Join Our Family?
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8">
-              Take the first step towards quality education. Apply now or schedule a campus visit to learn more about St. Thomas English Convent School.
+              Take the first step towards quality education. Apply now or schedule a campus visit to learn more about Saint Thomas English Convent School.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="xl">

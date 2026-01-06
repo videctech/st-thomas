@@ -8,10 +8,10 @@ import sportsImage from "@/assets/sports.jpg";
 import libraryImage from "@/assets/library.jpg";
 
 const stats = [
-  { number: "1500+", label: "Students", icon: Users },
-  { number: "100+", label: "Expert Faculty", icon: GraduationCap },
-  { number: "50+", label: "Years of Excellence", icon: Award },
-  { number: "25+", label: "Extracurricular Activities", icon: Trophy },
+  { number: "1200+", label: "Students", icon: Users },
+  { number: "20+", label: "Expert Faculty", icon: GraduationCap },
+  { number: "21+", label: "Years of Excellence", icon: Award },
+  { number: "10+", label: "Years of Excellence", icon: Trophy },
 ];
 
 const features = [
@@ -45,7 +45,7 @@ const testimonials = [
   {
     name: "Mrs. Priya Sharma",
     role: "Parent",
-    content: "St. Thomas has been instrumental in shaping my child's character. The teachers are dedicated and the environment is nurturing.",
+    content: "Saint Thomas has been instrumental in shaping my child's character. The teachers are dedicated and the environment is nurturing.",
     rating: 5,
   },
   {
@@ -88,23 +88,21 @@ const Index = () => {
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="St. Thomas English Convent School Campus"
+            alt="Saint Thomas English Convent School Campus"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-hero-gradient opacity-80" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10 py-20">
-          <div className="max-w-3xl stagger-children">
-            <span className="inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
-              Excellence in Education Since 1965
-            </span>
+          <div className="max-w-3xl stagger-children md:ml-12 lg:ml-24">
+
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Nurturing Minds,<br />
-              <span className="text-gradient-gold">Building Futures</span>
+              Building Foundations For<br />
+              <span className="text-gradient-gold">A Brighter Future</span>
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed max-w-2xl">
-              At St. Thomas English Convent School, we blend traditional values with modern education to shape tomorrow's leaders with knowledge, character, and compassion.
+              At Saint Thomas English Convent School, we blend traditional values with modern education to shape tomorrow's leaders with knowledge, character, and compassion.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="xl" asChild>
@@ -155,7 +153,7 @@ const Index = () => {
                 A Legacy of Excellence in Education
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                For over five decades, St. Thomas English Convent School has been a beacon of quality education. Our institution combines rigorous academics with character development, preparing students not just for examinations but for life.
+                For over two decades, Saint Thomas English Convent School has been a beacon of quality education. Our institution combines rigorous academics with character development, preparing students not just for examinations but for life.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 We believe in nurturing the whole child — intellectually, emotionally, and socially — creating an environment where every student can discover their potential and excel.
@@ -165,7 +163,7 @@ const Index = () => {
                   <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
                     <Award className="w-5 h-5 text-secondary" />
                   </div>
-                  <span className="font-medium">CBSE Affiliated</span>
+                  <span className="font-medium">State Board Affiliated</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
@@ -189,10 +187,7 @@ const Index = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-secondary text-secondary-foreground p-6 rounded-xl shadow-gold">
-                <p className="font-display text-3xl font-bold">50+</p>
-                <p className="text-sm">Years of Excellence</p>
-              </div>
+
             </div>
           </div>
         </div>
@@ -246,7 +241,7 @@ const Index = () => {
               What Our Community Says
             </h2>
             <p className="text-muted-foreground">
-              Hear from parents, students, and alumni about their experiences at St. Thomas.
+              Hear from parents, students, and alumni about their experiences at Saint Thomas.
             </p>
           </div>
 
@@ -326,7 +321,7 @@ const Index = () => {
               Begin Your Child's Journey of Excellence
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8">
-              Admissions for the academic year 2025-26 are now open. Give your child the gift of quality education at St. Thomas English Convent School.
+              Admissions for the academic year 2025-26 are now open. Give your child the gift of quality education at Saint Thomas English Convent School.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="xl" asChild>

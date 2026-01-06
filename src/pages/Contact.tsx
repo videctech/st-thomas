@@ -10,7 +10,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+1 (234) 567-890", "+1 (234) 567-891"],
+    details: ["+91 98765 43210", "+91 98765 43211"],
   },
   {
     icon: Mail,
@@ -20,12 +20,12 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["123 Education Lane", "Knowledge City, 12345"],
+    details: ["Shakara-Housi Road, Holalu Village", "Hadagali Taluk, Vijayanagar-583217"],
   },
   {
     icon: Clock,
     title: "Office Hours",
-    details: ["Mon - Fri: 8:00 AM - 4:00 PM", "Sat: 9:00 AM - 1:00 PM"],
+    details: ["Mon - Fri: 8:00 AM - 5:00 PM", "Sat: 8:00 AM - 1:00 PM"],
   },
 ];
 
@@ -42,14 +42,14 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     toast.success("Message sent successfully!", {
       description: "We'll get back to you within 24 hours.",
     });
-    
+
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     setIsSubmitting(false);
   };
@@ -150,7 +150,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (234) 567-890"
+                      placeholder="+91 98765 43210"
                       className="bg-card"
                     />
                   </div>
@@ -202,12 +202,12 @@ const Contact = () => {
                 Visit Our Campus
               </h2>
               <p className="text-muted-foreground mb-8">
-                We welcome you to visit our campus and experience the St. Thomas environment firsthand.
+                We welcome you to visit our campus and experience the Saint Thomas environment firsthand.
               </p>
-              
+
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-medium bg-muted">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509!2d-122.4015!3d37.7893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ3JzIxLjUiTiAxMjLCsDI0JzA1LjQiVw!5e0!3m2!1sen!2sus!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.6583757321905!2d75.7126680865696!3d14.844419257998503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb99df6032af889%3A0x535f24d0209f9875!2sSt.%20Thomas%20English%20Convent%20School%2C%20Holalu!5e0!3m2!1sen!2sin!4v1767707609455!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

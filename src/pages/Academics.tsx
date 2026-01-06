@@ -7,30 +7,30 @@ import classroomImage from "@/assets/classroom.jpg";
 const programs = [
   {
     level: "Pre-Primary",
-    grades: "Nursery - KG",
-    description: "Foundational learning through play-based activities, building curiosity and social skills.",
-    subjects: ["English", "Mathematics", "Environmental Studies", "Art & Craft", "Music & Dance"],
+    grades: "Nursery, LKG, UKG",
+    description: "Foundational learning utilizing the Montessori method to foster curiosity and social skills.",
+    subjects: ["English", "Rhymes", "Story Telling", "Art & Craft", "General Knowledge"],
     color: "from-emerald-500 to-teal-500",
   },
   {
-    level: "Primary School",
-    grades: "Classes I - V",
-    description: "Building strong fundamentals in core subjects with emphasis on conceptual understanding.",
-    subjects: ["English", "Hindi", "Mathematics", "Science", "Social Studies", "Computer Science", "Art", "Physical Education"],
+    level: "Lower Primary",
+    grades: "Class 1 - 5",
+    description: "Building strong fundamentals in core subjects with emphasis on conceptual understanding and language development.",
+    subjects: ["Kannada", "English", "Hindi", "Mathematics", "EVS (Environmental Studies)", "Computer Science"],
     color: "from-blue-500 to-indigo-500",
   },
   {
-    level: "Middle School",
-    grades: "Classes VI - VIII",
-    description: "Advanced curriculum preparing students for higher studies with practical applications.",
-    subjects: ["English", "Hindi", "Sanskrit", "Mathematics", "Science", "Social Science", "Computer Applications", "Art", "Physical Education"],
+    level: "Higher Primary",
+    grades: "Class 6 - 7",
+    description: "Advanced curriculum creating a bridge to high school with deeper subject exploration.",
+    subjects: ["Kannada", "English", "Hindi", "Mathematics", "Science", "Social Science", "Physical Education"],
     color: "from-violet-500 to-purple-500",
   },
   {
     level: "High School",
-    grades: "Classes IX - XII",
-    description: "Comprehensive CBSE curriculum with stream choices and career guidance.",
-    subjects: ["Science Stream", "Commerce Stream", "Humanities Stream", "Optional Languages", "Physical Education", "Various Electives"],
+    grades: "Class 8 - 10",
+    description: "Rigorous preparation for SSLC board examinations with focused academic support.",
+    subjects: ["Kannada", "English", "Hindi", "Mathematics", "Science", "Social Science", "Information Technology"],
     color: "from-amber-500 to-orange-500",
   },
 ];
@@ -67,7 +67,7 @@ const Academics = () => {
               Academic Excellence & Beyond
             </h1>
             <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              Our comprehensive curriculum, aligned with CBSE standards, is designed to foster critical thinking, creativity, and a love for lifelong learning.
+              Our comprehensive curriculum, aligned with State Board standards, is designed to foster critical thinking, creativity, and a love for lifelong learning.
             </p>
           </div>
         </div>
@@ -82,7 +82,7 @@ const Academics = () => {
                 <Award className="w-7 h-7 text-secondary" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-foreground">CBSE Affiliated</h3>
+                <h3 className="font-display font-bold text-foreground">State Board Affiliated</h3>
                 <p className="text-muted-foreground text-sm">Affiliation No. XXXXXX</p>
               </div>
             </div>
@@ -100,7 +100,7 @@ const Academics = () => {
                 <Clock className="w-7 h-7 text-secondary" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-foreground">8:00 AM - 2:30 PM</h3>
+                <h3 className="font-display font-bold text-foreground">8:00 AM - 5:00 PM</h3>
                 <p className="text-muted-foreground text-sm">School Timings</p>
               </div>
             </div>
@@ -272,7 +272,7 @@ const Academics = () => {
               Ready to Experience Excellence?
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8">
-              Join St. Thomas English Convent School and give your child the gift of quality education.
+              Join Saint Thomas English Convent School and give your child the gift of quality education.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="xl" asChild>

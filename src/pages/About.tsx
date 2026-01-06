@@ -57,7 +57,7 @@ const About = () => {
               Shaping Lives Since 1965
             </h1>
             <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              St. Thomas English Convent School has been a cornerstone of quality education, nurturing generations of students to become responsible citizens and future leaders.
+              Saint Thomas English Convent School has been a cornerstone of quality education, nurturing generations of students to become responsible citizens and future leaders.
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 1965 by a group of visionary educators and religious leaders, St. Thomas English Convent School began its journey with just 50 students and 5 teachers in a modest building.
+                  Founded by a group of visionary educators and religious leaders, Saint Thomas English Convent School began its journey with a modest building.
                 </p>
                 <p>
                   Over the decades, we have grown into one of the region's most respected educational institutions, serving over 1,500 students annually. Our growth has been guided by an unwavering commitment to academic excellence and character development.
@@ -135,7 +135,7 @@ const About = () => {
               Our Core Values
             </h2>
             <p className="text-muted-foreground">
-              These foundational principles guide everything we do at St. Thomas English Convent School.
+              These foundational principles guide everything we do at Saint Thomas English Convent School.
             </p>
           </div>
 
@@ -203,7 +203,7 @@ const About = () => {
             <div>
               <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
-                The St. Thomas Difference
+                The Saint Thomas Difference
               </h2>
               <ul className="space-y-4">
                 {[

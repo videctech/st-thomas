@@ -8,6 +8,8 @@ const navLinks = [
   { href: "/about", label: "About Us" },
   { href: "/academics", label: "Academics" },
   { href: "/admissions", label: "Admissions" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/achievements", label: "Achievements" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -23,16 +25,14 @@ const Header = () => {
           <div className="flex items-center gap-6">
             <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-secondary transition-colors">
               <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">+1 (234) 567-890</span>
+              <span className="hidden sm:inline">+91 98765 43210</span>
             </a>
+          </div>
+          <div className="flex items-center gap-2">
             <a href="mailto:info@stthomas.edu" className="flex items-center gap-2 hover:text-secondary transition-colors">
               <Mail className="w-4 h-4" />
               <span className="hidden sm:inline">info@stthomas.edu</span>
             </a>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4" />
-            <span className="hidden sm:inline">123 Education Lane, Knowledge City</span>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ const Header = () => {
               <span className="text-primary-foreground font-display font-bold text-xl">ST</span>
             </div>
             <div className="hidden md:block">
-              <h1 className="font-display text-lg font-bold text-primary leading-tight">St. Thomas</h1>
+              <h1 className="font-display text-lg font-bold text-primary leading-tight">Saint Thomas</h1>
               <p className="text-xs text-muted-foreground">English Convent School</p>
             </div>
           </Link>
@@ -57,11 +57,10 @@ const Header = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                  location.pathname === link.href
-                    ? "bg-secondary text-secondary-foreground"
-                    : "text-foreground hover:bg-muted"
-                }`}
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${location.pathname === link.href
+                  ? "bg-secondary text-secondary-foreground"
+                  : "text-foreground hover:bg-muted"
+                  }`}
               >
                 {link.label}
               </Link>
@@ -93,11 +92,10 @@ const Header = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`px-4 py-3 rounded-lg font-medium transition-all ${
-                    location.pathname === link.href
-                      ? "bg-secondary text-secondary-foreground"
-                      : "text-foreground hover:bg-muted"
-                  }`}
+                  className={`px-4 py-3 rounded-lg font-medium transition-all ${location.pathname === link.href
+                    ? "bg-secondary text-secondary-foreground"
+                    : "text-foreground hover:bg-muted"
+                    }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

@@ -9,18 +9,25 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* School Info */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center">
-                <span className="text-secondary-foreground font-display font-bold text-2xl">ST</span>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-white p-2 rounded-lg shadow-sm w-16 h-16 flex items-center justify-center">
+                {/* School logo will go here */}
+                <div className="text-primary font-bold text-xs text-center leading-none">
+                  SAINT THOMAS<br />SCHOOL
+                </div>
               </div>
-              <div>
-                <h3 className="font-display text-xl font-bold">St. Thomas</h3>
-                <p className="text-sm text-primary-foreground/70">English Convent School</p>
+              <div className="text-left">
+                <h3 className="font-display text-2xl font-bold leading-tight">Saint Thomas</h3>
+                <p className="text-secondary font-medium">English Convent School</p>
               </div>
             </div>
-            <p className="text-primary-foreground/80 leading-relaxed mb-6">
-              Nurturing minds, building character, and inspiring excellence since 1965. Our commitment to holistic education shapes tomorrow's leaders.
+            <p className="text-primary-foreground/90 leading-relaxed mb-4">
+              Building Foundations For A Brighter Future for more than two decades. Our commitment to holistic education shapes tomorrow's leaders.
             </p>
+            <div className="space-y-1 mb-6 text-sm text-primary-foreground/70">
+              <p>School DISE Code: 29120202006</p>
+              <p>School TT Code: TT126</p>
+            </div>
             <div className="flex gap-3">
               {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
                 <a
@@ -42,6 +49,8 @@ const Footer = () => {
                 { href: "/about", label: "About Us" },
                 { href: "/academics", label: "Academics" },
                 { href: "/admissions", label: "Admissions" },
+                { href: "/gallery", label: "Gallery" },
+                { href: "/achievements", label: "Achievements" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -81,13 +90,14 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary mt-0.5" />
                 <span className="text-primary-foreground/80">
-                  123 Education Lane,<br />Knowledge City, 12345
+                  Shakara-Housi Road, Holalu Village,<br />
+                  Hadagali Taluk, Vijayanagar Dist-583217
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary" />
                 <a href="tel:+1234567890" className="text-primary-foreground/80 hover:text-secondary transition-colors">
-                  +1 (234) 567-890
+                  +91 98765 43210
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -105,7 +115,7 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-sm">
-            © 2024 St. Thomas English Convent School. All rights reserved.
+            © 2026 Saint Thomas English Convent School. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-primary-foreground/60 hover:text-secondary transition-colors">
@@ -117,7 +127,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 

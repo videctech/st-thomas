@@ -8,7 +8,7 @@ const HighSchool = () => {
     return (
         <div className="min-h-screen bg-background">
             {/* Hero Section */}
-            <section className="relative min-h-[90vh] flex items-center bg-hero-gradient">
+            <section className="relative py-32 bg-hero-gradient">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full filter blur-3xl" />
                 </div>

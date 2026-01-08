@@ -2,6 +2,14 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AdmissionForm } from "@/components/AdmissionForm";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -95,9 +103,22 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="hero" asChild>
-              <Link to="/admissions">Apply Now</Link>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="hero">Apply Now</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[600px] border-none bg-card p-0 overflow-hidden rounded-2xl">
+                <div className="bg-hero-gradient p-8 text-white">
+                  <DialogHeader>
+                    <DialogTitle className="text-3xl font-display font-bold">Online Admission</DialogTitle>
+                    <p className="text-white/80 mt-2">Join Saint Thomas English Convent School for the 2025-26 Academic Year.</p>
+                  </DialogHeader>
+                </div>
+                <div className="p-8 max-h-[70vh] overflow-y-auto">
+                  <AdmissionForm />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -142,11 +163,23 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <Button variant="hero" className="mt-2" asChild>
-                <Link to="/admissions" onClick={() => setIsMobileMenuOpen(false)}>
-                  Apply Now
-                </Link>
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="hero" className="mt-2">
+                    Apply Now
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[500px] border-none bg-card p-0 overflow-hidden rounded-2xl w-[95vw]">
+                  <div className="bg-hero-gradient p-6 text-white text-center">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-display font-bold">Online Admission</DialogTitle>
+                    </DialogHeader>
+                  </div>
+                  <div className="p-6 max-h-[80vh] overflow-y-auto">
+                    <AdmissionForm onSuccess={() => setIsMobileMenuOpen(false)} />
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         )}

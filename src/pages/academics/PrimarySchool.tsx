@@ -3,6 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ChevronRight, Calendar, Book, Clock } from "lucide-react";
 import classroomImage from "@/assets/classroom.jpg";
+import { AdmissionForm } from "@/components/AdmissionForm";
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
 
 const PrimarySchool = () => {
     return (
@@ -88,12 +96,24 @@ const PrimarySchool = () => {
                             </div>
 
                             <div className="pt-6">
-                                <Button variant="hero" asChild>
-                                    <Link to="/admissions">
-                                        Apply for Admission
-                                        <ChevronRight className="w-5 h-5 ml-2" />
-                                    </Link>
-                                </Button>
+                                <Dialog>
+                                    <DialogTrigger asChild>
+                                        <Button variant="hero">
+                                            Apply for Admission
+                                            <ChevronRight className="w-5 h-5 ml-2" />
+                                        </Button>
+                                    </DialogTrigger>
+                                    <DialogContent className="sm:max-w-[600px] border-none bg-card p-0 overflow-hidden rounded-2xl">
+                                        <div className="bg-hero-gradient p-8 text-white text-center">
+                                            <DialogHeader>
+                                                <DialogTitle className="text-3xl font-display font-bold">Online Admission</DialogTitle>
+                                            </DialogHeader>
+                                        </div>
+                                        <div className="p-8 max-h-[70vh] overflow-y-auto">
+                                            <AdmissionForm />
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
                             </div>
                         </div>
 

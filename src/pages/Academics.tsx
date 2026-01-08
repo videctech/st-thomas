@@ -3,6 +3,14 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, Beaker, Music, Palette, Globe, Calculator, ChevronRight, Award, Users, Clock } from "lucide-react";
 import laboratoryImage from "@/assets/laboratory.jpg";
 import classroomImage from "@/assets/classroom.jpg";
+import { AdmissionForm } from "@/components/AdmissionForm";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const programs = [
   {
@@ -281,12 +289,24 @@ const Academics = () => {
               Join Saint Thomas English Convent School and give your child the gift of quality education.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/admissions">
-                  Apply Now
-                  <ChevronRight className="w-5 h-5" />
-                </Link>
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="hero" size="xl">
+                    Apply Now
+                    <ChevronRight className="w-5 h-5" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px] border-none bg-card p-0 overflow-hidden rounded-2xl">
+                  <div className="bg-hero-gradient p-8 text-white text-center">
+                    <DialogHeader>
+                      <DialogTitle className="text-3xl font-display font-bold">Online Admission</DialogTitle>
+                    </DialogHeader>
+                  </div>
+                  <div className="p-8 max-h-[70vh] overflow-y-auto">
+                    <AdmissionForm />
+                  </div>
+                </DialogContent>
+              </Dialog>
               <Button variant="heroOutline" size="xl" asChild>
                 <Link to="/contact">Contact Us</Link>
               </Button>

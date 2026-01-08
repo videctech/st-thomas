@@ -6,6 +6,15 @@ import classroomImage from "@/assets/classroom.jpg";
 import laboratoryImage from "@/assets/laboratory.jpg";
 import sportsImage from "@/assets/sports.jpg";
 import libraryImage from "@/assets/library.jpg";
+import { AdmissionForm } from "@/components/AdmissionForm";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useState } from "react";
 
 const stats = [
   { number: "1200+", label: "Students", icon: Users },
@@ -105,12 +114,25 @@ const Index = () => {
               At Saint Thomas English Convent School, we blend traditional values with modern education to shape tomorrow's leaders with knowledge, character, and compassion.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/admissions">
-                  Apply for Admission
-                  <ChevronRight className="w-5 h-5" />
-                </Link>
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="hero" size="xl">
+                    Apply for Admission
+                    <ChevronRight className="w-5 h-5" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px] border-none bg-card p-0 overflow-hidden rounded-2xl">
+                  <div className="bg-hero-gradient p-8 text-white">
+                    <DialogHeader>
+                      <DialogTitle className="text-3xl font-display font-bold">Online Admission</DialogTitle>
+                      <p className="text-white/80 mt-2">Join Saint Thomas English Convent School for the 2025-26 Academic Year.</p>
+                    </DialogHeader>
+                  </div>
+                  <div className="p-8 max-h-[70vh] overflow-y-auto">
+                    <AdmissionForm />
+                  </div>
+                </DialogContent>
+              </Dialog>
               <Button variant="heroOutline" size="xl" asChild>
                 <Link to="/about">Discover Our Story</Link>
               </Button>
@@ -324,12 +346,25 @@ const Index = () => {
               Admissions for the academic year 2025-26 are now open. Give your child the gift of quality education at Saint Thomas English Convent School.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/admissions">
-                  Start Application
-                  <ChevronRight className="w-5 h-5" />
-                </Link>
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="hero" size="xl">
+                    Start Application
+                    <ChevronRight className="w-5 h-5" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px] border-none bg-card p-0 overflow-hidden rounded-2xl">
+                  <div className="bg-hero-gradient p-8 text-white">
+                    <DialogHeader>
+                      <DialogTitle className="text-3xl font-display font-bold">Online Admission</DialogTitle>
+                      <p className="text-white/80 mt-2">Join Saint Thomas English Convent School for the 2025-26 Academic Year.</p>
+                    </DialogHeader>
+                  </div>
+                  <div className="p-8 max-h-[70vh] overflow-y-auto">
+                    <AdmissionForm />
+                  </div>
+                </DialogContent>
+              </Dialog>
               <Button variant="heroOutline" size="xl" asChild>
                 <Link to="/contact">Schedule a Visit</Link>
               </Button>

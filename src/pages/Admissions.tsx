@@ -2,6 +2,14 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FileText, Calendar, CheckCircle, Download, ChevronRight, Clock, Users, BookOpen } from "lucide-react";
 import heroImage from "@/assets/hero-school.jpg";
+import { AdmissionForm } from "@/components/AdmissionForm";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const admissionSteps = [
   {
@@ -77,10 +85,25 @@ const Admissions = () => {
               Applications are now open for the academic year 2025-26. Join our community of learners and experience the Saint Thomas difference.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="xl">
-                Apply Online Now
-                <ChevronRight className="w-5 h-5" />
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="hero" size="xl">
+                    Apply Online Now
+                    <ChevronRight className="w-5 h-5" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px] border-none bg-card p-0 overflow-hidden rounded-2xl">
+                  <div className="bg-hero-gradient p-8 text-white">
+                    <DialogHeader>
+                      <DialogTitle className="text-3xl font-display font-bold">Online Admission</DialogTitle>
+                      <p className="text-white/80 mt-2">Join Saint Thomas English Convent School for the 2025-26 Academic Year.</p>
+                    </DialogHeader>
+                  </div>
+                  <div className="p-8 max-h-[70vh] overflow-y-auto">
+                    <AdmissionForm />
+                  </div>
+                </DialogContent>
+              </Dialog>
               <Button variant="heroOutline" size="xl">
                 <Download className="w-5 h-5" />
                 Download Brochure
@@ -256,10 +279,25 @@ const Admissions = () => {
               Take the first step towards quality education. Apply now or schedule a campus visit to learn more about Saint Thomas English Convent School.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="hero" size="xl">
-                Apply Online
-                <ChevronRight className="w-5 h-5" />
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="hero" size="xl">
+                    Apply Online
+                    <ChevronRight className="w-5 h-5" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px] border-none bg-card p-0 overflow-hidden rounded-2xl">
+                  <div className="bg-hero-gradient p-8 text-white">
+                    <DialogHeader>
+                      <DialogTitle className="text-3xl font-display font-bold">Online Admission</DialogTitle>
+                      <p className="text-white/80 mt-2">Join Saint Thomas English Convent School for the 2025-26 Academic Year.</p>
+                    </DialogHeader>
+                  </div>
+                  <div className="p-8 max-h-[70vh] overflow-y-auto">
+                    <AdmissionForm />
+                  </div>
+                </DialogContent>
+              </Dialog>
               <Button variant="heroOutline" size="xl" asChild>
                 <Link to="/contact">Schedule a Visit</Link>
               </Button>

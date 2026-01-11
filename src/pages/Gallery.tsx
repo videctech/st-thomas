@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select";
 
 // Categories for the gallery
-const categories = ["All", "Campus", "Facilities", "Campus Life", "Sports", "Arts"];
+const categories = ["All", "Campus", "Facilities", "Campus Life", "Sports", "Arts", "Celebration", "Cultural Events", "Others"];
 
 // Dynamically generate years from 2024 down to 2003
 const years = ["All", ...Array.from({ length: 2024 - 2003 + 1 }, (_, i) => (2024 - i).toString())];

@@ -1,15 +1,16 @@
-
-import { Trophy, Medal, Star, Target, Award, Calendar } from "lucide-react";
-import heroImage from "@/assets/hero-school.jpg";
+import { useState } from "react";
+import { Trophy, Medal, Star, Target, Award, Calendar, Users, School } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const achievements = [
     {
-        category: "Academics",
+        category: "Academic",
         icon: Star,
         title: "District Toppers",
         year: "2024",
         description: "Our students secured top 3 ranks in the district SSLC examinations.",
-        stats: "100% Pass Result"
+        stats: "100% Pass Result",
+        type: "student"
     },
     {
         category: "Sports",
@@ -17,7 +18,8 @@ const achievements = [
         title: "Regional Basketball Champions",
         year: "2024",
         description: "The senior boys' basketball team won the inter-school regional championship.",
-        stats: "Gold Medal"
+        stats: "Gold Medal",
+        type: "student"
     },
     {
         category: "Cultural",
@@ -25,15 +27,17 @@ const achievements = [
         title: "State Dance Competition",
         year: "2023",
         description: "First prize in the state-level folk dance group competition.",
-        stats: "1st Place"
+        stats: "1st Place",
+        type: "student"
     },
     {
-        category: "Innovation",
+        category: "Academic",
         icon: Target,
         title: "Young Scientists Award",
         year: "2023",
         description: "Student project on sustainable irrigation selected for national exhibition.",
-        stats: "Top 10"
+        stats: "Top 10",
+        type: "student"
     },
     {
         category: "Sports",
@@ -41,19 +45,45 @@ const achievements = [
         title: "Athletics Meet",
         year: "2023",
         description: "Overall champions at the Taluk level annual sports meet.",
-        stats: "15 Gold Medals"
+        stats: "15 Gold Medals",
+        type: "student"
     },
     {
-        category: "Academics",
+        category: "School Awards",
         icon: Award,
         title: "Best School Award",
         year: "2022",
         description: "Recognized as the best performing school in the educational block.",
-        stats: "Excellence Award"
+        stats: "Excellence Award",
+        type: "school"
+    },
+    {
+        category: "School Awards",
+        icon: School,
+        title: "Best Digital Campus",
+        year: "2024",
+        description: "Recognized for integrating advanced digital learning tools across all classrooms.",
+        stats: "Top Ranked",
+        type: "school"
+    },
+    {
+        category: "School Awards",
+        icon: Users,
+        title: "Community Outreach Award",
+        year: "2023",
+        description: "Awarded for exceptional contribution to local community development initiatives.",
+        stats: "A+ Grade",
+        type: "school"
     }
 ];
 
 const Achievements = () => {
+    const [filter, setFilter] = useState("All");
+
+    const filteredAchievements = filter === "All"
+        ? achievements
+        : achievements.filter(item => item.category === filter);
+
     return (
         <div className="min-h-screen bg-background">
             {/* Hero Section */}
@@ -79,11 +109,27 @@ const Achievements = () => {
             {/* Main Content */}
             <section className="py-20">
                 <div className="container mx-auto px-4">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {achievements.map((item, index) => (
+                    {/* Filter Buttons */}
+                    <div className="flex flex-wrap justify-center gap-4 mb-16">
+                        {["All", "Academic", "Cultural", "Sports", "School Awards"].map((cat) => (
+                            <Button
+                                key={cat}
+                                variant={filter === cat ? "hero" : "outline"}
+                                onClick={() => setFilter(cat)}
+                                className="min-w-[120px]"
+                            >
+                                {cat}
+                            </Button>
+                        ))}
+                    </div>
+
+                    {/* Achievements Grid */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500">
+                        {filteredAchievements.map((item, index) => (
                             <div
                                 key={index}
-                                className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 border border-border/50 hover:border-secondary/50"
+                                className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 border border-border/50 hover:border-secondary/50 animate-fade-up"
+                                style={{ animationDelay: `${index * 0.1}s` }}
                             >
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-all duration-300">
@@ -114,6 +160,12 @@ const Achievements = () => {
                             </div>
                         ))}
                     </div>
+
+                    {filteredAchievements.length === 0 && (
+                        <div className="text-center py-20">
+                            <p className="text-muted-foreground">No achievements found in this category.</p>
+                        </div>
+                    )}
 
                     <div className="mt-20 bg-muted rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/5 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2" />

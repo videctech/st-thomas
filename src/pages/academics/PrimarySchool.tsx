@@ -69,8 +69,8 @@ const PrimarySchool = () => {
                                 <h3 className="font-display text-2xl font-bold mb-4">Core Subjects</h3>
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[
-                                        "English (First Language)",
-                                        "Kannada",
+                                        "Kannada (First Language)",
+                                        "English",
                                         "Hindi",
                                         "Mathematics",
                                         "General Science",

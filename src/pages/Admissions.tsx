@@ -14,28 +14,23 @@ import {
 const admissionSteps = [
   {
     step: 1,
-    title: "Submit Application",
-    description: "Fill out the online application form with all required details and documents.",
+    title: "Seat Enquiry",
+    description: "Inquire about seat availability for the desired class and academic session by contacting the school office.",
   },
   {
     step: 2,
-    title: "Document Verification",
-    description: "Our admissions team will review and verify all submitted documents.",
+    title: "Entrance Assessment",
+    description: "Students participate in a proficiency assessment to evaluate their academic foundation and readiness.",
   },
   {
     step: 3,
-    title: "Entrance Assessment",
-    description: "Students may be required to take an age-appropriate assessment test.",
+    title: "Parent Interview",
+    description: "A collaborative interactive session with parents to align on educational goals and student progress.",
   },
   {
     step: 4,
-    title: "Parent Interview",
-    description: "Interactive session with parents to understand the child's background and expectations.",
-  },
-  {
-    step: 5,
-    title: "Admission Confirmation",
-    description: "Upon selection, complete the fee payment to confirm admission.",
+    title: "Document Verification & Submit Application",
+    description: "Final verification of all required documents followed by the formal submission of the application form.",
   },
 ];
 
@@ -47,15 +42,8 @@ const documents = [
   "Aadhar Card of Student",
   "Address Proof (Utility Bill/Passport)",
   "Parent's ID Proof",
-  "Medical Fitness Certificate",
 ];
 
-const feeStructure = [
-  { category: "Pre-Primary (Nursery - KG)", admission: "₹15,000", tuition: "₹4,500/month" },
-  { category: "Primary (Classes I - V)", admission: "₹18,000", tuition: "₹5,000/month" },
-  { category: "Middle School (Classes VI - VIII)", admission: "₹20,000", tuition: "₹5,500/month" },
-  { category: "High School (Classes IX - XII)", admission: "₹25,000", tuition: "₹6,500/month" },
-];
 
 const importantDates = [
   { event: "Admission Form Available", date: "January 1, 2025" },
@@ -225,44 +213,6 @@ const Admissions = () => {
         </div>
       </section>
 
-      {/* Fee Structure */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Financials</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-              Fee Structure
-            </h2>
-            <p className="text-muted-foreground">
-              Transparent and competitive fee structure for quality education.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-card rounded-2xl shadow-medium overflow-hidden">
-              <div className="grid grid-cols-3 bg-primary text-primary-foreground p-4 font-semibold">
-                <span>Category</span>
-                <span className="text-center">Admission Fee</span>
-                <span className="text-center">Monthly Tuition</span>
-              </div>
-              {feeStructure.map((item, index) => (
-                <div
-                  key={index}
-                  className={`grid grid-cols-3 p-4 ${index % 2 === 0 ? "bg-card" : "bg-muted"
-                    }`}
-                >
-                  <span className="text-foreground font-medium">{item.category}</span>
-                  <span className="text-center text-secondary font-semibold">{item.admission}</span>
-                  <span className="text-center text-secondary font-semibold">{item.tuition}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-sm text-muted-foreground mt-6 text-center">
-              * Additional fees may apply for transportation, meals, and specific extracurricular activities.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="relative py-20">

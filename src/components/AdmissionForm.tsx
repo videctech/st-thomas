@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { GraduationCap, User, Phone, Mail, BookOpen, Send } from "lucide-react";
+import { GraduationCap, User, Phone, MapPin, BookOpen, Send } from "lucide-react";
 
 export const AdmissionForm = ({ onSuccess }: { onSuccess?: () => void }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,11 +43,14 @@ export const AdmissionForm = ({ onSuccess }: { onSuccess?: () => void }) => {
                             <SelectValue placeholder="Select Grade" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="nursery">Nursery / Pre-K</SelectItem>
-                            <SelectItem value="kg">Kindergarten</SelectItem>
-                            <SelectItem value="primary">Classes 1-5</SelectItem>
-                            <SelectItem value="middle">Classes 6-8</SelectItem>
-                            <SelectItem value="high">Classes 9-10</SelectItem>
+                            <SelectItem value="playgroup">Play Group</SelectItem>
+                            <SelectItem value="lkg">LKG</SelectItem>
+                            <SelectItem value="ukg">UKG</SelectItem>
+                            {[...Array(10)].map((_, i) => (
+                                <SelectItem key={i + 1} value={`class-${i + 1}`}>
+                                    Class {i + 1}
+                                </SelectItem>
+                            ))}
                         </SelectContent>
                     </Select>
                 </div>
@@ -69,10 +72,10 @@ export const AdmissionForm = ({ onSuccess }: { onSuccess?: () => void }) => {
             </div>
 
             <div className="space-y-2">
-                <Label htmlFor="email" className="flex items-center gap-2 text-foreground/80">
-                    <Mail className="w-4 h-4 text-secondary" /> Email Address
+                <Label htmlFor="address" className="flex items-center gap-2 text-foreground/80">
+                    <MapPin className="w-4 h-4 text-secondary" /> Address / Place
                 </Label>
-                <Input id="email" type="email" placeholder="email@example.com" required className="bg-muted/50 border-border/50 focus:border-secondary/50" />
+                <Input id="address" placeholder="Enter your full address" required className="bg-muted/50 border-border/50 focus:border-secondary/50" />
             </div>
 
             <div className="space-y-2">

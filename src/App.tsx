@@ -14,6 +14,8 @@ import Admissions from "./pages/Admissions";
 import Gallery from "./pages/Gallery";
 import Achievements from "./pages/Achievements";
 import Contact from "./pages/Contact";
+import Alumni from "./pages/Alumni";
+import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -39,6 +41,8 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/alumni" element={<Alumni />} />
+            <Route path="/careers" element={<Careers />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

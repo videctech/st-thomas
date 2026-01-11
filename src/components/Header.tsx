@@ -26,6 +26,7 @@ const navLinks = [
   { href: "/admissions", label: "Admissions" },
   { href: "/gallery", label: "Gallery" },
   { href: "/achievements", label: "Achievements" },
+  { href: "/alumni", label: "Alumni" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -43,6 +44,9 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span className="hidden sm:inline">+91 98765 43210</span>
             </a>
+          </div>
+          <div className="hidden md:block font-bold tracking-wide">
+            Havanoor Educational Society®
           </div>
           <div className="flex items-center gap-2">
             <a href="mailto:info@stthomas.edu" className="flex items-center gap-2 hover:text-secondary transition-colors">

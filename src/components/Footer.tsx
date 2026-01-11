@@ -51,6 +51,8 @@ const Footer = () => {
                 { href: "/admissions", label: "Admissions" },
                 { href: "/gallery", label: "Gallery" },
                 { href: "/achievements", label: "Achievements" },
+                { href: "/alumni", label: "Alumni" },
+                { href: "/careers", label: "Careers" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>

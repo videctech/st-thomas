@@ -235,46 +235,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Preview */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">FAQ</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-muted-foreground mb-12">
-              Find quick answers to common queries about admissions, academics, and more.
-            </p>
-
-            <div className="space-y-4 text-left">
-              {[
-                {
-                  q: "What is the admission process for new students?",
-                  a: "The admission process includes submitting an online application, document verification, an entrance assessment, a parent interview, and final confirmation upon selection.",
-                },
-                {
-                  q: "What is the student-teacher ratio?",
-                  a: "We maintain a 20:1 student-teacher ratio to ensure personalized attention for every student.",
-                },
-                {
-                  q: "Do you offer transportation facilities?",
-                  a: "Yes, we provide safe and reliable transportation covering major routes in the city.",
-                },
-                {
-                  q: "Are there any scholarships available?",
-                  a: "We offer merit-based scholarships for academically outstanding students and need-based financial aid for deserving families.",
-                },
-              ].map((faq, index) => (
-                <div key={index} className="bg-card p-6 rounded-xl shadow-soft">
-                  <h4 className="font-display font-bold text-foreground mb-2">{faq.q}</h4>
-                  <p className="text-muted-foreground text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
